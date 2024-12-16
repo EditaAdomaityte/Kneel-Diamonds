@@ -1,4 +1,11 @@
-import { setCaretId } from "./transientState.js"
+import { setSizeId } from "./transientState.js"
+
+const handleSizeChange = (changeEvent) => {
+    if (changeEvent.target.name === "size"){
+        const convertToNumber = parseInt(changeEvent.target.value)
+        setSizeId(convertToNumber)
+    }
+}
 
 export const sizeOptions = async() => {
     document.addEventListener("change", handleSizeChange)
@@ -12,9 +19,3 @@ export const sizeOptions = async() => {
     return sizeOptionsHTML
 }
 
-const handleSizeChange = (changeEvent) => {
-    if (changeEvent.target.name === "size"){
-        const convertToNumber = parseInt(changeEvent.target.value)
-        setCaretId(convertToNumber)
-    }
-}

@@ -1,0 +1,17 @@
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-wrap: wrap ;
+    flex-direction: column;
+    margin-left: 1 em;
+}
+
+.choices {
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-areas: 
+    'h1 h1 h1'
+    'choices choices choices';
+    
+}

@@ -1,5 +1,11 @@
 import { setMetalId } from "./transientState.js"
 
+const handleMetalChange = (changeEvent) => {
+    if (changeEvent.target.name === "metal"){
+        const convertToNumber = parseInt(changeEvent.target.value)
+        setMetalId(convertToNumber)
+    }
+}
 
 export const metalOptions = async() => {
     document.addEventListener("change",handleMetalChange)
@@ -28,9 +34,3 @@ export const metalOptions = async() => {
 return optionsHTML
 }
 
-const handleMetalChange = (changeEvent) => {
-    if (changeEvent.target.name === "metal"){
-        const convertToNumber = parseInt(changeEvent.target.value)
-        setMetalId(convertToNumber)
-    }
-}

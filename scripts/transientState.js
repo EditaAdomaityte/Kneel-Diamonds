@@ -1,8 +1,9 @@
 //setting transient state initial values:
 
 const transientState = {
+    "id": 0,
     "metalId": 0,
-    "caretId": 0,
+    "sizeId": 0,
     "styleId": 0
 }
 
@@ -11,8 +12,8 @@ export const setMetalId = (chosenMetal) =>{
     console.log(transientState)
 }
 
-export const setCaretId = (chosenCaret) =>{
-    transientState.caretId = chosenCaret
+export const setSizeId = (chosenSize) =>{
+    transientState.sizeId = chosenSize
     console.log(transientState)
 }
 
@@ -26,9 +27,9 @@ export const setStyleId = (chosenStyle) =>{
 export const saveOrderEntry =  async () =>{
     const postOptions = {
         method: "POST",
-        header: {
-            "Content-Type": "application.json"},
-        body: JSON.stringify (transientState) //<- converting js to a string 
+        headers: {
+            "Content-Type": "application/json"},
+        body: JSON.stringify(transientState) //<- converting js to a string 
         }
     const response = await fetch ("http://localhost:8088/orders", postOptions)
     //building custom event where we create new entry to JSON:

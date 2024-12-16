@@ -1,3 +1,4 @@
+import { Orders } from "./generatedList.js"
 import { metalOptions } from "./metalOptions.js"
 import { saveOrders } from "./savedOrders.js"
 import { sizeOptions } from "./sizeOptions.js"
@@ -11,7 +12,8 @@ const render = async() => {
     const metalHTML = await metalOptions()
     const sizeHTML = await  sizeOptions()
     const styleHTML = await styleOptions()
-    const buttonHTML = await saveOrders()
+    const buttonHTML = saveOrders()
+    const generatedList =await Orders()
 
     const composedHTML = `
         <h1>Kneel Diamonds</h1>
@@ -40,6 +42,7 @@ const render = async() => {
 
         <article class="customOrders">
             <h2>Custom Jewelry Orders</h2>
+            ${generatedList}
 
         </article>
     `
@@ -49,7 +52,10 @@ const render = async() => {
 
 render()
 
-document.addEventListener("newOrderCreated",render)
+document.addEventListener("newOrderCreated", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    render()
+})
 
 
 // const putItOnDOM = async() => {

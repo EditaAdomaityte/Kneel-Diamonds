@@ -1,5 +1,11 @@
 import { setStyleId } from "./transientState.js"
 
+const handleStyleChange = (changeEvent) => {
+    if (changeEvent.target.name === "style"){
+        const convertToNumber = parseInt(changeEvent.target.value)
+        setStyleId(convertToNumber)
+    }
+}
 
 export const styleOptions = async() => {
     document.addEventListener("change",handleStyleChange)
@@ -13,9 +19,3 @@ export const styleOptions = async() => {
     return styleOptionsHTML
 }
 
-const handleStyleChange = (changeEvent) => {
-    if (changeEvent.target.name === "style"){
-        const convertToNumber = parseInt(changeEvent.target.value)
-        setStyleId(convertToNumber)
-    }
-}
