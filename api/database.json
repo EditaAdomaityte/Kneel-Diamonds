@@ -70,18 +70,55 @@
       "price": 1241
     }
   ],
+  "types": [
+    {
+      "id": 1,
+      "type": "Ring"
+    },
+    {
+      "id": 2,
+      "type": "Earing"
+    },
+    {
+      "id": 3,
+      "type": "Necklace"
+    }
+  ],
   "orders": [
     {
       "id": 1,
       "metalId": 3,
       "sizeId": 1,
-      "styleId": 1
+      "styleId": 1,
+      "typeId": 2
     },
     {
       "id": 2,
       "metalId": 1,
       "sizeId": 1,
-      "styleId": 1
+      "styleId": 1,
+      "typeId": 1
+    },
+    {
+      "id": 3,
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 1
+    },
+    {
+      "id": 4,
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 2
+    },
+    {
+      "id": 5,
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 3
     }
   ]
 }

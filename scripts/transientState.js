@@ -4,7 +4,8 @@ const transientState = {
     "id": 0,
     "metalId": 0,
     "sizeId": 0,
-    "styleId": 0
+    "styleId": 0,
+    "typeId":0
 }
 
 export const setMetalId = (chosenMetal) =>{
@@ -20,6 +21,11 @@ export const setSizeId = (chosenSize) =>{
 export const setStyleId = (chosenStyle) =>{
     transientState.styleId = chosenStyle
     console.log(transientState)
+}
+export const setTypeId = (chosenType) =>{
+    transientState.typeId = chosenType
+    console.log(transientState)
+
 }
 
 

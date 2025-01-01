@@ -7,11 +7,36 @@ body {
 }
 
 .choices {
-    background-color: blanchedalmond;
-    display: grid;
-    grid-template-columns: 3fr;
-    grid-template-areas: 
-    'h1 h1 h1'
-    'choices choices choices';
-    
+    background-color: rgba(233, 146, 15, 0.61);
+    display: flex;
+    flex-direction: row;
+    border: 2px darkred;
+    border-radius: 1rem;
+    padding: 1rem;
+    justify-content: space-evenly;
+
+
+
+}
+.choices__metals.options {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: rgba(223, 214, 202, 0.9);
+}
+.choices__sizes.options {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: rgba(223, 214, 202, 0.9);
+}
+.choices__styles.options {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: rgba(223, 214, 202, 0.9);
+}
+.types {
+    display: flex;
+    flex-direction: row;
 }

@@ -3,6 +3,7 @@ import { metalOptions } from "./metalOptions.js"
 import { saveOrders } from "./savedOrders.js"
 import { sizeOptions } from "./sizeOptions.js"
 import { styleOptions } from "./stylesOptions.js"
+import { typeOptions } from "./typeOptions.js"
 
 
 
@@ -14,25 +15,32 @@ const render = async() => {
     const styleHTML = await styleOptions()
     const buttonHTML = saveOrders()
     const generatedList =await Orders()
+    const typeHTML = await typeOptions()
 
     const composedHTML = `
         <h1>Kneel Diamonds</h1>
 
         <article class="choices">
-            <section class="choices__metals options">
+            <section class="choices__metals.options">
                 <h2>Metals</h2>
                 ${metalHTML}
             </section>
 
-            <section class="choices__sizes options">
+            <section class="choices__sizes.options">
                 <h2>Sizes</h2>
                 ${sizeHTML}
             </section>
 
-            <section class="choices__styles options">
+            <section class="choices__styles.options">
                 <h2>Styles</h2>
                 ${styleHTML}
             </section>
+        </article>
+
+        <article >
+        <h2>Types</h2>
+        <div class="types">
+        ${typeHTML}</div>
         </article>
 
         <article class="order">
@@ -51,6 +59,7 @@ const render = async() => {
 }
 
 render()
+
 
 document.addEventListener("newOrderCreated", event => {
     console.log("State of data has changed. Regenerating HTML...")
